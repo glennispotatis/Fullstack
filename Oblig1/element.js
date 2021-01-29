@@ -9,15 +9,15 @@ class Coffee extends HTMLElement {
         this.shadowRoot.innerHTML = this._getTemplate();
     }
 
-    getLevel(){
+    getLevel() {
         return this.level;
     }
 
-    getPrepared(){
+    getPrepared() {
         return this.prepared;
     }
 
-    getTemperature(){
+    getTemperature() {
         return this.temperature;
     }
 
