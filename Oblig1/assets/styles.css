@@ -1,0 +1,10 @@
+section{
+    border: 2px solid black;
+    padding: 1em;
+    margin: 1em;
+}
+
+section img{
+    display: flex;
+    max-width: 30%;
+}

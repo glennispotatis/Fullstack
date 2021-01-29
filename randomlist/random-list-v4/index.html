@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS example random elements from list</title>
+
+    <style>
+        #top-container {
+            background-color: antiquewhite;
+            margin: 1em;
+            padding: 1em;
+        }
+
+        #bottom-container {
+            background-color: cornsilk;
+            margin: 1em;
+            padding: 1em;
+        } 
+    </style>
+</head>
+<body>
+    <h1>Playing with Web components</h1>
+
+    <div id="top-container">
+        <random-list id="list1"></random-list>
+    </div>
+
+    <div id="bottom-container">
+        <random-list id="list2"></random-list>
+    </div>
+
+    <script src="./RandomListComponent.js"></script>
+    <script>
+        const fruitsList = ["apple", "pineapple", "pen"];
+        const techList = ["hello", "world", "!"];
+
+        let fruits = document.getElementById("list1");
+        let tech = document.getElementById("list2");
+
+        fruits.setStaticList(fruitsList);
+        tech.setStaticList(techList);
+        
+        console.log(fruits.staticList);
+        console.log(fruits);
+    </script>
+</body>
+</html>
