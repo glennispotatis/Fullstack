@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Task 1 - Back-End Part</title>
+</head>
+
+<body>
+    <h1>Plants in the Design Building</h1>
+    <section>
+        <h2>Asplenium Nidus Peperomia</h2>
+        <figure>
+            <img src="img/asplenium-nidus-peperomia.jpg"
+                alt="Four plants in pots. Asplenium Nidus Peperomia">
+            <figcaption>Three Asplenium Nidus Peperomia on display in 4 pots.</figcaption>
+        </figure>
+        <button id="btn1" onclick="showMore('art1','btn1')">Show More...</button>
+        <article id="art1">
+            <button onclick="showLess('art1','btn1')">Show Less...</button>
+            <h3>More...</h3>
+            <iframe src="https://www.youtube.com/embed/U_09Tvb49ZI"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </article>
+    </section>
+
+    <section>
+        <h2>Ape</h2>
+        <figure>
+            <img src="img/asplenium-nidus-peperomia.jpg"
+                alt="Four plants in pots. Asplenium Nidus Peperomia">
+            <figcaption>Three Asplenium Nidus Peperomia on display in 4 pots.</figcaption>
+        </figure>
+        <button id="btn2" onclick="showMore('art2','btn2')">Show More...</button>
+        <article id="art2">
+            <button onclick="showLess('art2','btn2')">Show Less...</button>
+            <h3>More...</h3>
+            <iframe src="https://www.youtube.com/embed/U_09Tvb49ZI"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </article>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

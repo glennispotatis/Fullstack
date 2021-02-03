@@ -1,0 +1,26 @@
+body {
+    margin: 2em;
+}
+
+section {
+    border: 1px solid black;
+    padding: 1em;
+    margin: 2em 0;
+}
+
+section figure {
+    max-width: 40%;
+}
+
+figure img {
+    max-width: 100%;
+}
+
+section article{
+    display: none;
+}
+
+iframe {
+    width: 30em;
+    height: 15em;
+}
