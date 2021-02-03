@@ -1,0 +1,13 @@
+{
+    "plant1":{
+        "name" : "Rose",
+        "status" : "Watered",
+        "floor" : 1
+    },
+
+    "plant2":{
+        "name" : "Potty",
+        "status" : "Watered",
+        "floor" : 2
+    }
+}

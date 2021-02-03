@@ -1,0 +1,13 @@
+{
+    "machine1" : {
+        "name" : "Machine1",
+        "floor" : 1,
+        "status" : "Full"
+    },
+
+    "machine2" : {
+        "name" : "Machine2",
+        "floor" : 2,
+        "status" : "Empty"
+    }
+}
