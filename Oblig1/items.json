@@ -1,7 +1,17 @@
 [
     {
-        "level": 1.1,
+        "level": 0.4,
         "preparedAt": "2021-01-29T07:15:00+0100",
         "temperature": 70
+    },
+    {
+        "level": 2.2,
+        "preparedAt": "1998-02-14T07:15:00+0100",
+        "temperature": 69
+    },
+    {
+        "level": 0.69,
+        "preparedAt": "2021-01-29T07:15:00+0100",
+        "temperature": 420.69
     }
 ]

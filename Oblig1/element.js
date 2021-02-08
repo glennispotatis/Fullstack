@@ -34,7 +34,6 @@ class Coffee extends HTMLElement {
 
     setLevel(level){
         this._level = level;
-        console.log(level);
     }
 
     setPreparedAt(preparedAt){
@@ -85,7 +84,7 @@ function loadInfo() {
     fetch('items.json')
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+            //console.log(data);
             let coffee = document.getElementsByTagName("coffee-element");
             for(let i=0; i<data.length; i++){
                 if(coffee[i]){
