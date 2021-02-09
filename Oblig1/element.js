@@ -6,6 +6,7 @@ class Coffee extends HTMLElement {
         this._level;
         this._preparedAt;
         this._temperature;
+        this._refreshed = 0;
     }
 
     getLevel(){
@@ -32,6 +33,10 @@ class Coffee extends HTMLElement {
         }
     }
 
+    getRefreshed(){
+        return this._refreshed;
+    }
+
     setLevel(level){
         this._level = level;
     }
@@ -49,7 +54,12 @@ class Coffee extends HTMLElement {
         this.setPreparedAt(preparedAt);
         this.setTemperature(temperature);
 
+        this.render();
+    }
+
+    render(){
         this.shadowRoot.innerHTML = this._getTemplate();
+        this.handleChange();
     }
 
     _getTemplate() {
@@ -73,8 +83,25 @@ class Coffee extends HTMLElement {
             <p>Level: ${this.getLevel()}</p>
             <p>Prepared at: ${this.getPrepared()}</p>
             <p>Temperature: ${this.getTemperature()}</p>
+            <button>Refresh</button>
         </section>
         `;
+    }
+
+    handleChange(){
+        this.shadowRoot.querySelector("button").onclick = (evt) => {
+            this._refreshed++;
+
+            this.dispatchEvent(new CustomEvent("updated", {
+                detail: {
+                    refreshed: this.getRefreshed()
+                }
+            }));
+        };
+
+        this.addEventListener("updated", (evt) => {
+            console.log(evt.detail.refreshed);
+        });
     }
 }
 
