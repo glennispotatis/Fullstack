@@ -7,16 +7,19 @@ class MyButton extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(){
+    handleClick() {
         console.log(`"this" value is: ${this}`);
-        this.setState({
-            nClicks: this.state.nClicks+1
-        });
+        this.setState((prevState) => {
+            return {
+                nClicks: prevState.nClicks + 1
+            }
+        }
+        );
         console.log(`The number of clicks is: ${this.state.nClicks}`);
     }
 
-    render() { 
-        return ( 
+    render() {
+        return (
             <button onClick={this.handleClick}>Clicked {this.state.nClicks} times</button>
         );
     }
