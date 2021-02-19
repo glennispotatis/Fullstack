@@ -9,7 +9,9 @@ class MyButton extends Component {
 
     handleClick(){
         console.log(`"this" value is: ${this}`);
-        this.state.nClicks+=1;
+        this.setState({
+            nClicks: this.state.nClicks+1
+        });
         console.log(`The number of clicks is: ${this.state.nClicks}`);
     }
 
