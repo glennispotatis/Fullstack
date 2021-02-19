@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import WelcomeF from './components/WelcomeF';
+import WelcomeC from './components/WelcomeC';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Our body...</h1>
+      <WelcomeF />
+      <WelcomeF name="John Doe" />
+      <WelcomeF name={23} />
+
+      <h2>With classes</h2>
+      <WelcomeC />
+      <WelcomeC name="John Doe" />
+      <WelcomeC name={23} />
     </div>
   );
 }
