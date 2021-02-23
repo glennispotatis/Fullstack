@@ -4,7 +4,6 @@ import './randomlist.css'
 class Randomlist extends Component {
     constructor(props) {
         super(props);
-        this.staticList = [...this.props.list];
         this.listA = [...this.props.list];
         this.state = { randomList: [] }
         this.handlePull = this.handlePull.bind(this);
