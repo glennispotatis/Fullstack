@@ -6,11 +6,9 @@ class Randomlist extends Component {
         super(props);
         this.staticList = [...this.props.list];
         this.listA = [...this.props.list];
-        this.listB = [];
-    }
-
-    handlePullElement(){
-        this.setState()
+        this.state = { randomList: [] }
+        this.handlePull = this.handlePull.bind(this);
+        this.handleReset = this.handleReset.bind(this);
     }
 
     render() {
@@ -18,24 +16,44 @@ class Randomlist extends Component {
             <section>
                 <h2>Original list</h2>
                 <ul>
-                    {this.listA.map((item) => {
-                        //const isItemNotPulled = this.listA.find((elem) => elem === item);
-                        //const stringClass = isItemNotPulled ? '' : 'className="status_strike"';
+                    {this.props.list.map((item) => {
+                        //const isItemNotPulled = this.props.list.find((elem) => elem === item);
+                        //const stringClass = isItemNotPulled ? '' : "status_strike";
                         return <li key={item}>{item}</li>;
                     })}
                 </ul>
 
-                <button onClick={this.handlePullElement}>Pull Element</button>
-                <button>Reset</button>
+                <button onClick={this.handlePull}>Pull Element</button>
+                <button onClick={this.handleReset}>Reset</button>
 
                 <h2>Random elements removed from list</h2>
                 <ol>
-                    {this.listB.map((item) => {
+                    {this.state.randomList.map((item) => {
                         return <li key={item}>{item}</li>
                     })}
                 </ol>
             </section>
         );
+    }
+
+    handlePull() {
+        if (!this.listA.length) return null;
+        const randomIndex = Math.floor(Math.random() * this.listA.length);
+        const randomElem = this.listA.splice(randomIndex, 1)[0];
+
+        this.setState((state) => {
+            return {
+                randomList: [...state.randomList, randomElem]
+            };
+        });
+    }
+
+    handleReset(){
+        this.setState({
+            randomList: []
+        },() => {
+            this.listA = [...this.props.list]
+        })
     }
 }
 

@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <Randomlist list={['TS', 'JS', 'HTML']} />
-      <Randomlist />
+      {<Randomlist />}
     </div>
   );
 }
