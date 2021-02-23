@@ -15,20 +15,22 @@ class CustomList extends Component {
             <ul>
                 {this.state.list.map(elem=><li key={elem}>{elem}</li>)}
             </ul>
-            {this.clear &&<button onClick={this.handleClear}>Clear</button>}
-            {this.controls !== 'push' &&<button onClick={this.handlePush}>Push random string</button>}
-            {this.controls !== 'reset' &&<button onClick={this.handleReset}>Reset</button>}
+            {/* this.props.controls['clear'] && */<button onClick={this.handleClear}>Clear</button>}
+            {/* this.props.controls['push'] && */<button onClick={this.handlePush}>Push random string</button>}
+            {/* this.props.controls['reset'] && */<button onClick={this.handleReset}>Reset</button>}
         </>
         );
     }
 
     handleClear(){
+        console.log(this.props.controls);
         this.setState({
             list: []
         });
     }
 
     handlePush(){
+        console.log(this.props.controls);
         const randomString = Math.random().toString(36).substring(2, 7);
 
         this.setState((state)=>{
