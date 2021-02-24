@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class CustomList extends Component {
     constructor(props) {
         super(props);
-        this.state = { list: this.props.list };
+        this.state = { list: this.props.list, controls: this.props.controls };
         this.handleClear = this.handleClear.bind(this);
         this.handlePush = this.handlePush.bind(this);
         this.handleReset = this.handleReset.bind(this);
@@ -15,9 +15,9 @@ class CustomList extends Component {
             <ul>
                 {this.state.list.map(elem=><li key={elem}>{elem}</li>)}
             </ul>
-            {/* this.props.controls['clear'] && */<button onClick={this.handleClear}>Clear</button>}
-            {/* this.props.controls['push'] && */<button onClick={this.handlePush}>Push random string</button>}
-            {/* this.props.controls['reset'] && */<button onClick={this.handleReset}>Reset</button>}
+            {/* this.state.controls['clear'] && */<button onClick={this.handleClear}>Clear</button>}
+            {/* this.state.controls['push'] && */<button onClick={this.handlePush}>Push random string</button>}
+            {/* this.state.controls['reset'] && */<button onClick={this.handleReset}>Reset</button>}
         </>
         );
     }
@@ -48,7 +48,8 @@ class CustomList extends Component {
 }
 
 CustomList.defaultProps = {
-    list: ['apple', 'pineapple', 'pen']
+    list: ['apple', 'pineapple', 'pen'],
+    controls: ['clear', 'push', 'reset']
 };
 
 export default CustomList;
