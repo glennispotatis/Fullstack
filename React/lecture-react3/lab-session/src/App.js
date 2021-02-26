@@ -1,11 +1,12 @@
 import './App.css';
-import CustomList from './components/CustomList';
+import AwesomeList from './components/AwesomeList';
+import BestList from './components/BestList';
 
 function App() {
   return (
     <div className="App">
-      <CustomList />
-      <CustomList list={['TS', 'JS', 'HTML']} controls={['push', 'reset']} />
+      <AwesomeList />
+      <BestList />
     </div>
   );
 }
