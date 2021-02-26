@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 const INITIAL_LIST = ['apple', 'pineapple', 'pen'];
-const DEFAULT_CONTROLS = ['clear', 'push', 'reset'];
+const DEFAULT_CONTROLS = ['clear', 'add', 'reset'];
 const DEFAULT_STATE = {
     list: INITIAL_LIST,
     input: {
@@ -17,7 +17,6 @@ class BestList extends Component {
 
         this.input = React.createRef();
         this.handleClear = this.handleClear.bind(this);
-        this.handlePush = this.handlePush.bind(this);
         this.handleReset = this.handleReset.bind(this);
         this.addElement = this.addElement.bind(this);
         this.onChangeValue = this.onChangeValue.bind(this);
@@ -28,10 +27,12 @@ class BestList extends Component {
         return (
             <>
                 <ul>
-                {this.state.list.map((item, index) => {
+                    {this.state.list.map((item, index) => {
                         return (
-                            <li key={item} onClick={() => this.selectItem(item, index)} style={{ cursor: 'pointer' }}>
+                            <li key={item}>
                                 {item}
+                                <span onClick={() => this.selectItem(item, index)} style={{ cursor: 'pointer' }}>&#128221;</span>
+                                <span onClick={() => this.deleteItem(index)} style={{ cursor: 'pointer' }}>&#10060;</span>
                             </li>
                         )
                     })}
@@ -48,9 +49,8 @@ class BestList extends Component {
                     />
                 </div>
                 {this.isControlSet('clear') && <button onClick={this.handleClear}>Clear</button>}
-                {this.isControlSet('push') && <button onClick={this.handlePush}>Push random string</button>}
+                {this.isControlSet('add') && <button onClick={this.addElement} disabled={this.state.input.index !== null ? true : false}>Add element</button>}
                 {this.isControlSet('reset') && <button onClick={this.handleReset}>Reset</button>}
-                <button onClick={this.addElement} disabled={this.state.input.index !== null ? true : false}>Add element</button>
             </>
         );
     }
@@ -59,17 +59,6 @@ class BestList extends Component {
         console.log(this.props.controls);
         this.setState({
             list: []
-        });
-    }
-
-    handlePush() {
-        //console.log(this.props.controls);
-        const randomString = Math.random().toString(36).substring(2, 7);
-
-        this.setState((state) => {
-            return {
-                list: [...state.list, randomString]
-            }
         });
     }
 
@@ -135,6 +124,18 @@ class BestList extends Component {
                 }
             }
         }, () => this.input.current.focus());
+    }
+
+    deleteItem(i) {
+        this.setState(state => {
+            let list = state.list.filter((value, index) => {
+                return index !== i;
+            });
+            return {
+                ...state,
+                list
+            };
+        })
     }
 
     isControlSet(controlName) {
