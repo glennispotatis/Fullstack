@@ -1,0 +1,23 @@
+{
+  "name": "workshop",
+  "version": "1.0.0",
+  "description": "Pet project for students testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ntnu",
+    "express",
+    "pet-project"
+  ],
+  "author": "Glenn",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs-extra": "^9.1.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.12.0"
+  }
+}
