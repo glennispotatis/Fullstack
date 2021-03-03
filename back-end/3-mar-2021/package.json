@@ -1,0 +1,22 @@
+{
+  "name": "3-mar-2021",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "ntnu",
+    "npm"
+  ],
+  "author": "Glenn",
+  "license": "ISC",
+  "devDependencies": {
+    "jshint": "^2.12.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
