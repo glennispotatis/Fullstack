@@ -2,8 +2,10 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const fs = require('fs-extra');
+const morgan = require('morgan');
 
 app.use(express.json());
+app.use(morgan('combined'));
 
 let users = fs.readJSONSync('./users.json');
 let lastid = users.length === 0 ? 0 : users[users.length - 1].id;
