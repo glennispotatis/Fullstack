@@ -3,9 +3,11 @@ const app = express();
 const port = 3000;
 const fs = require('fs-extra');
 const morgan = require('morgan');
+const path = require('path');
 
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'});
 app.use(express.json());
-app.use(morgan('combined'));
+app.use(morgan('dev', { stream: accessLogStream }));
 
 let users = fs.readJSONSync('./users.json');
 let lastid = users.length === 0 ? 0 : users[users.length - 1].id;
