@@ -1,0 +1,10 @@
+.UserList {
+	width: 422px;
+	max-width: 100%;
+	background-color: var(--color-bg-tertiary);
+	padding: 1em;
+}
+
+.UserList > *{
+	margin: 0.5em auto;
+}

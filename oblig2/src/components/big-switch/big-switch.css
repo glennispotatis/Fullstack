@@ -1,0 +1,8 @@
+.BigSwitch {
+    max-width: 100%;
+    width: 312px;
+}
+
+.BigSwitch > *:first-child {
+    margin-bottom: 1em;
+}

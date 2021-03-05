@@ -1,0 +1,29 @@
+.BigButton {
+    height: 105px;
+    width: 312px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-bg-secondary);
+    color: white;
+}
+
+.BigButton:hover {
+    cursor: pointer;
+    /* box-shadow: 1px 1px 5px var(--color-bg-secondary-light); */
+    transform: translate(1px, 1px);
+}
+
+.BigButton:active {
+    box-shadow: inset 0px 0px 5px 3px var(--color-bg-secondary-light);
+}
+
+.BigButton > p {
+    text-transform: uppercase;
+}
+
+.BigButton.disabled {
+    background-color: #3AAFB940;
+    color: rgb(129, 129, 129);
+}
