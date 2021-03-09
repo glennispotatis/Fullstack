@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 import './App.css';
@@ -15,6 +14,9 @@ import NotFound from './components/NotFound';
 import About from './components/about/About';
 import PrivateRoute from './routes/PrivateRoute';
 import Login from './components/login/Login';
+import ForgotPass from './components/forms/ForgotPass';
+import Nav from './components/nav/Nav';
+import { isLoggedIn } from './utils/isAuth';
 
 
 class App extends Component {
@@ -27,44 +29,38 @@ class App extends Component {
     }
   }
 
+  componentDidMount(){
+    const isAuth = isLoggedIn();
+    this.setState({isAuth});
+  }
+
   render() {
     return (
       <div className="App">
         <Router>
           <div className="App">
             <header className="App-header">
-              <nav>
-                <ul>
-                  <li>
-                    <Link to="/">Home</Link>
-                  </li>
-                  <li>
-                    <Link to="/user">User home</Link>
-                  </li>
-                  <li>
-                    <Link to="/dashboard">Dashboard</Link>
-                  </li>
-                  <li>
-                    <Link to="/login">Login</Link>
-                  </li>
-                </ul>
-              </nav>
+              <Nav isAuth={this.state.isAuth} handleLogOut={this.handleLogOut} />
             </header>
             <main>
               <Switch>
-                <Route path="/dashboard">
+                <Route exact path="/dashboard">
                   <UserList users={this.state.users} />
                 </Route>
                 <PrivateRoute exact path="/user">
                   <Home user={this.state.myUser} onChangePlace={this.updateUserPlace} onChangeStatus={this.updateUserStatus} />
                 </PrivateRoute>
-                <Route path="/login">
-                  <Login/>
+                <Route exact path="/login">
+                  <Login handleLogIn={this.handleLogIn} redirect={this.state.redirect} isAuth={this.state.isAuth} />
                 </Route>
-                <Route path="/">
+                <Route exact path="/forgot">
+                  <h1>So you forgot your password?</h1>
+                  <ForgotPass />
+                </Route>
+                <Route exact path="/">
                   <About />
                 </Route>
-                <Route>
+                <Route path="*">
                   <NotFound />
                 </Route>
               </Switch>
@@ -74,6 +70,16 @@ class App extends Component {
       </div>
     );
   }
+
+  handleLogIn = () => {
+    localStorage.setItem('userAuth', JSON.stringify(true));
+    this.setState({ redirect: "/user", isAuth: true });
+  };
+
+  handleLogOut = () => {
+    localStorage.removeItem('userAuth');
+    this.setState({ redirect: null, isAuth: false });
+  };
 
   updateUserPlace = (onCampus) => {
     const place = onCampus ? 'on-campus' : 'home-office';

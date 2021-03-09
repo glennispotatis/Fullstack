@@ -1,0 +1,25 @@
+.nav a {
+  color: inherit;
+}
+
+.nav * {
+  color: var(--color-text);
+  font-size: 0.9em;
+}
+
+.nav {
+  width: 100%;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul li {
+  margin: 0 1em;
+}

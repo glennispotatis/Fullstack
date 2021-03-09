@@ -1,43 +1,33 @@
-import React, { Component } from 'react';
-import { Redirect } from "react-router-dom";
-
-import { isLoggedIn } from '../../utils/isAuth';
+import React from 'react';
+import { Redirect, Link } from "react-router-dom";
 import './Login.css';
+import SignUp from '../forms/SignUp';
+import '../forms/forms.css';
 
 //This component is implementing more than one functionality only for academic purposes.
 //If the app is connected to a Backend, the auth logic should be implemented in a different file (SOLID)
-class Login extends Component {
-    state = { redirect: null };
-
-    componentDidMount() {
-        const isAuth = isLoggedIn();
-        this.setState({isAuth});
+function Login(props) {
+    if(props.redirect){
+        return <Redirect to={props.redirect} />
     }
 
-    render() {
-        
-        if (this.state.redirect) {
-            return <Redirect to={this.state.redirect} />
-        }
+    return (
+        <div className="Login">
+            {!props.isAuth &&
+                <>
+                    <form action="" method="GET" onSubmit={props.handleLogIn}>
+                        <label htmlFor="email">E-mail:</label>
+                        <input type="email" name="email" />
 
-        return (
-            <div className="Login">
-                {!this.state.isAuth && <button onClick={this.handleLogIn}>Log In</button>}
-                {this.state.isAuth && <button onClick={this.handleLogOut}>Log Out</button>}
-            </div>
-        );
-    }
-
-    handleLogIn = () => {
-        localStorage.setItem('userAuth', JSON.stringify(true));
-        this.setState({ redirect: "/user" });
-    };
-
-    handleLogOut = () => {
-        localStorage.removeItem('userAuth');
-        this.setState({isAuth: false});
-
-    };
+                        <label htmlFor="password">Password:</label>
+                        <input type="password" name="password" />
+                        <button type="submit">Log In</button>
+                    </form>
+                    <Link to="/forgot">Forgot password?</Link>
+                    <SignUp />
+                </>}
+        </div>
+    );
 }
 
 export default Login;
