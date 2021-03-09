@@ -18,7 +18,7 @@ function Nav(props) {
                     <Link to="/login">Login</Link>
                 </li>}
                 {props.isAuth && <li>
-                    <Link to="/home" onClick={props.handleLogOut}>Logout</Link>
+                    <Link to="/login" onClick={props.handleLogOut}>Logout</Link>
                 </li>}
             </ul>
         </nav>

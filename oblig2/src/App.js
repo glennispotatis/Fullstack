@@ -17,6 +17,7 @@ import Login from './components/login/Login';
 import ForgotPass from './components/forms/ForgotPass';
 import Nav from './components/nav/Nav';
 import { isLoggedIn } from './utils/isAuth';
+import SignUp from './components/forms/SignUp';
 
 
 class App extends Component {
@@ -52,6 +53,9 @@ class App extends Component {
                 </PrivateRoute>
                 <Route exact path="/login">
                   <Login handleLogIn={this.handleLogIn} redirect={this.state.redirect} isAuth={this.state.isAuth} />
+                </Route>
+                <Route exact path="/signup">
+                  <SignUp />
                 </Route>
                 <Route exact path="/forgot">
                   <h1>So you forgot your password?</h1>

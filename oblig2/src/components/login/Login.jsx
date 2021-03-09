@@ -1,8 +1,6 @@
 import React from 'react';
 import { Redirect, Link } from "react-router-dom";
 import './Login.css';
-import SignUp from '../forms/SignUp';
-import '../forms/forms.css';
 import { UIDConsumer } from 'react-uid';
 
 //This component is implementing more than one functionality only for academic purposes.
@@ -36,7 +34,7 @@ function Login(props) {
                         <button type="submit">Log In</button>
                     </form>
                     <Link to="/forgot">Forgot password?</Link>
-                    <SignUp />
+                    <p>Not a user? <Link to="signup">Sign up here</Link></p>
                 </>}
         </div>
     );
