@@ -95,7 +95,7 @@ class SignUp extends Component {
         if(password === rePassword){
             this.setState({ error: ''});
         }else {
-            this.setState({error: 'Passwords must match!', button: true});
+            this.setState({error: 'Passwords must match!'});
             event.preventDefault();
         }
         
