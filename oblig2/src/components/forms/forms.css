@@ -4,7 +4,11 @@
     align-items: center;
 }
 
-.btn{
+.sign-up p {
+    color: red;
+}
+
+.sign-up button{
     margin: 1em;
     padding: 8px 20px;
     border-radius: 0;

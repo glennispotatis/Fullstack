@@ -45,9 +45,9 @@ class App extends Component {
             </header>
             <main>
               <Switch>
-                <Route exact path="/dashboard">
+                <PrivateRoute exact path="/dashboard">
                   <UserList users={this.state.users} />
-                </Route>
+                </PrivateRoute>
                 <PrivateRoute exact path="/user">
                   <Home user={this.state.myUser} onChangePlace={this.updateUserPlace} onChangeStatus={this.updateUserStatus} />
                 </PrivateRoute>
