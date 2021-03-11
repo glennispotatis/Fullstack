@@ -12,30 +12,27 @@ function Login(props) {
 
     return (
         <div className="Login">
-            {!props.isAuth &&
-                <>
-                    <form action="#" method="GET" onSubmit={props.handleLogIn}>
-                        <UIDConsumer name={ id => `login-email-${id}`}>
-                            {id => (
-                                <>
-                                    <label htmlFor={id}>E-mail:</label>
-                                    <input id={id} type="email" name="email" />
-                                </>
-                            )}
-                        </UIDConsumer>
-                        <UIDConsumer name={ id => `login-password-${id}`}>
-                            {id => (
-                                <>
-                                    <label htmlFor={id}>Password:</label>
-                                    <input id={id} type="password" name="password" />
-                                </>
-                            )}
-                        </UIDConsumer>
-                        <button type="submit">Log In</button>
-                    </form>
-                    <Link to="/forgot">Forgot password?</Link>
-                    <p>Not a user? <Link to="signup">Sign up here</Link></p>
-                </>}
+            <form method="GET" onSubmit={props.handleLogIn}>
+                <UIDConsumer name={id => `login-email-${id}`}>
+                    {id => (
+                        <>
+                            <label htmlFor={id}>E-mail:</label>
+                            <input id={id} type="email" name="email" required />
+                        </>
+                    )}
+                </UIDConsumer>
+                <UIDConsumer name={id => `login-password-${id}`}>
+                    {id => (
+                        <>
+                            <label htmlFor={id}>Password:</label>
+                            <input id={id} type="password" name="password" required />
+                        </>
+                    )}
+                </UIDConsumer>
+                <button type="submit">Log In</button>
+            </form>
+            <Link to="/forgot">Forgot password?</Link>
+            <p>Not a user? <Link to="/signup">Sign up here</Link></p>
         </div>
     );
 }

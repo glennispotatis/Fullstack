@@ -52,7 +52,7 @@ class App extends Component {
                   <Home user={this.state.myUser} onChangePlace={this.updateUserPlace} onChangeStatus={this.updateUserStatus} />
                 </PrivateRoute>
                 <Route exact path="/login">
-                  <Login handleLogIn={this.handleLogIn} redirect={this.state.redirect} isAuth={this.state.isAuth} />
+                  <Login handleLogIn={this.handleLogIn} redirect={this.state.redirect} />
                 </Route>
                 <Route exact path="/signup">
                   <SignUp />
@@ -61,10 +61,14 @@ class App extends Component {
                   <h1>So you forgot your password?</h1>
                   <ForgotPass />
                 </Route>
+                <Route exact path="/success">
+                  <h1>Great success!</h1>
+                  <p>Check your inbox to instructions on how to update your password!</p>
+                </Route>
                 <Route exact path="/">
                   <About />
                 </Route>
-                <Route path="*">
+                <Route>
                   <NotFound />
                 </Route>
               </Switch>

@@ -13,4 +13,6 @@
     padding: 8px 20px;
     border-radius: 0;
     overflow: hidden;
+    background-color: var(--color-bg-secondary);
+    color: white;
 }

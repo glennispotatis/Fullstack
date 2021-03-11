@@ -3,8 +3,8 @@ import { UIDConsumer } from 'react-uid';
 
 function ForgotPass(props) {
     return (
-        <section className="log-in">
-            <form action="" method="GET">
+        <section className="forms">
+            <form action="/success" method="GET">
                 <UIDConsumer name={id => `forgot-email-${id}`}>
                     {id => (
                         <>
@@ -13,7 +13,7 @@ function ForgotPass(props) {
                         </>
                     )}
                 </UIDConsumer>
-                <input type="submit" value="Send" />
+                <button type="submit">Send</button>
             </form>
         </section>
     );

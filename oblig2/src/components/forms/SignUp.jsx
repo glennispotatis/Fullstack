@@ -12,15 +12,14 @@ class SignUp extends Component {
             role: '',
             password: '', 
             rePassword: '',
-            error: '',
-            button: true
+            error: ''
         };
     }
     render() {
         return (
-            <section className="sign-up">
+            <section className="forms">
                 <h2>Not a user? Sign up below!</h2>
-                <form action="/login" method="GET" >
+                <form action="/login" method="GET" onSubmit={this.validate} >
                     <UIDConsumer name={id => `signup-firstName-${id}`}>
                         {id => (
                             <>
@@ -78,7 +77,7 @@ class SignUp extends Component {
                         )}
                     </UIDConsumer>
                     <p>{this.state.error}</p>
-                    <button type="submit" disabled={this.state.button}>Sign up</button>
+                    <button type="submit">Sign up</button>
                 </form>
             </section>
         );
@@ -89,20 +88,15 @@ class SignUp extends Component {
         this.setState({[stateName]: event.target.value});
     };
 
-    functions = () => {
-        this.eventHandler();
-        this.validate();
-    }
-
-    validate = () => {
-        //event.preventDefault();
+    validate = (event) => {
         let password = this.state.password;
         let rePassword = this.state.rePassword;
 
-        if(password === rePassword && password.length !== 0 && rePassword.length !== 0){
-            this.setState({button: false, error: ''});
+        if(password === rePassword){
+            this.setState({ error: ''});
         }else {
             this.setState({error: 'Passwords must match!', button: true});
+            event.preventDefault();
         }
         
     }
