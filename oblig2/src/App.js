@@ -63,7 +63,7 @@ class App extends Component {
                 </Route>
                 <Route exact path="/success">
                   <h1>Great success!</h1>
-                  <p>Check your inbox to instructions on how to update your password!</p>
+                  <p>Check your inbox for instructions on how to update your password!</p>
                 </Route>
                 <Route exact path="/">
                   <About />
