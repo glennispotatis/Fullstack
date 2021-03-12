@@ -3,8 +3,6 @@ import { Redirect, Link } from "react-router-dom";
 import './Login.css';
 import { UIDConsumer } from 'react-uid';
 
-//This component is implementing more than one functionality only for academic purposes.
-//If the app is connected to a Backend, the auth logic should be implemented in a different file (SOLID)
 function Login(props) {
     if (props.redirect) {
         return <Redirect to={props.redirect} />

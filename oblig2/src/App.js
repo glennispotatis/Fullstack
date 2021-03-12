@@ -23,7 +23,6 @@ import SignUp from './components/forms/SignUp';
 class App extends Component {
   constructor(props) {
     super(props);
-    // posible values "available/busy and on-campus/home-office"
     this.state = {
       myUser: { ...USERS[0] },
       users: [...USERS]

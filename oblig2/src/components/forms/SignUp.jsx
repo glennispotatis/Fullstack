@@ -71,9 +71,7 @@ class SignUp extends Component {
                         {id => (
                             <>
                                 <label htmlFor={id}>Confirm Password:</label>
-                                <input id={id} type="password" name="rePassword" required onChange={this.eventHandler}
-                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                                title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" />
+                                <input id={id} type="password" name="rePassword" required onChange={this.eventHandler} />
                             </>
                         )}
                     </UIDConsumer>
