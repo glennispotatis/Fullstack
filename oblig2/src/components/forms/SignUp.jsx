@@ -15,6 +15,7 @@ class SignUp extends Component {
             error: ''
         };
     }
+    
     render() {
         return (
             <section className="forms">
