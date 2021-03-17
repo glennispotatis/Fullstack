@@ -2,13 +2,13 @@ const express = require('express');
 const router = express.Router();
 
 router.get(
-    '/dashboard',
+    '/profile',
     (req, res, next) => {
         res.json({
-            message: 'This will be the dashboard where you can view all students',
+            message: 'You are now in the secret place',
             user: req.user,
             token: req.query.secret_token
-        });
+        })
     }
 );
 

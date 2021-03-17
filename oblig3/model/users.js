@@ -12,9 +12,21 @@ const UserSchema = new Schema({
     status: {type:String, enum:['available', 'busy'], default:'available', required:true}
 });
 
+/* const UserSchema = new Schema({
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    password: {
+        type: String,
+        required: true
+    }
+}); */
+
 UserSchema.pre('save',
     async function(next){
-        const hash = await bcrypt.hash(this.password);
+        const hash = await bcrypt.hash(this.password, 10);
 
         this.password = hash;
         next();
@@ -24,6 +36,7 @@ UserSchema.pre('save',
 UserSchema.methods.isValidPassword = async function(password){
     const user = this;
     const compare = await bcrypt.compare(password, user.password);
+
     return compare;
 }
 

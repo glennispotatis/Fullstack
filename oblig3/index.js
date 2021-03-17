@@ -8,11 +8,10 @@ const UserModel = require('./model/users');
 require('./auth/auth');
 const routes = require('./routes/routes');
 const studentRoutes = require('./routes/studentRoutes');
-const teacherRoutes = require('./routes/teacherRoutes');
 
 app.use(express.json());
 app.use('/', routes);
-app.use('/dashboard', passport.authenticate('jwt', { session: false }), studentRoutes);
+app.use('/user', passport.authenticate('jwt', { session: false }), studentRoutes);
 
 mongoose.connect(
     'mongodb://localhost:27017/oblig3-users', {
@@ -25,7 +24,7 @@ const db = mongoose.connection;
 
 app.use((err, req, res, next) => {
     res.status(err.status || 500);
-    res.json({error: err});
+    res.json({ error: err });
 });
 
 db.on('error', (err) => console.log('There was an error connecting to the db', err));
