@@ -12409,3 +12409,9 @@ back-end/17-mar-21/jwt-example2/node_modules/yallist/LICENSE
 back-end/17-mar-21/jwt-example2/node_modules/yallist/package.json
 back-end/17-mar-21/jwt-example2/node_modules/yallist/README.md
 back-end/17-mar-21/jwt-example2/node_modules/yallist/yallist.js
+back-end/17-mar-21/jwt-example2/node_modules/passport-local/LICENSE
+back-end/17-mar-21/jwt-example2/node_modules/passport-local/package.json
+back-end/17-mar-21/jwt-example2/node_modules/passport-local/README.md
+back-end/17-mar-21/jwt-example2/node_modules/passport-local/lib/index.js
+back-end/17-mar-21/jwt-example2/node_modules/passport-local/lib/strategy.js
+back-end/17-mar-21/jwt-example2/node_modules/passport-local/lib/utils.js
