@@ -7,13 +7,7 @@ const router = express.Router();
 
 router.post(
     '/signup',
-    controller.createUser,
-    async (req, res, next) => {
-        res.json({
-            message: 'Signup successful!',
-            user: req.user
-        });
-    }
+    controller.createUser
 );
 
 router.get(
