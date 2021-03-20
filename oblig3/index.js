@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const app = express();
 const port = 3000;
-const UserModel = require('./model/users');
 
 require('./auth/auth');
 const routes = require('./routes/routes');
