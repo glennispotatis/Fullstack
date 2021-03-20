@@ -2,6 +2,7 @@ const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
 const UserModel = require('../model/users');
 
+
 passport.use(
     'login',
     new localStrategy(
@@ -9,20 +10,20 @@ passport.use(
             usernameField: 'email',
             passwordField: 'password'
         },
-        async(email, password, done) => {
+        async (email, password, done) => {
             try {
                 const user = await UserModel.findOne({ email });
-                if(!user){
+                if (!user) {
                     return done(null, false, { message: 'User not found' });
                 }
 
                 const validate = await user.isValidPassword(password);
-                if(!validate){
+                if (!validate) {
                     return done(null, false, { message: 'Wrong password' });
                 }
 
                 return done(null, user, { message: 'Logged in successfully!' })
-            } catch(error){
+            } catch (error) {
                 return done(error);
             }
         }
@@ -38,12 +39,13 @@ passport.use(
             secretOrKey: 'ostepop',
             jwtFromRequest: ExtractJWT.fromUrlQueryParameter('secret_token')
         },
-        async(token, done) => {
-            try{
+        async (token, done) => {
+            try {
                 return done(null, token.user);
-            } catch(error){
+            } catch (error) {
                 done(error);
             }
         }
     )
 );
+

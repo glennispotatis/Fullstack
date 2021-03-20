@@ -1,15 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const controller = require('../controllers/studentController');
 
 router.get(
-    '/profile',
-    (req, res, next) => {
-        res.json({
-            message: 'You are now in the secret place',
-            user: req.user,
-            token: req.query.secret_token
-        })
-    }
+    '/all',
+    controller.getAllUsers
 );
 
 module.exports = router;

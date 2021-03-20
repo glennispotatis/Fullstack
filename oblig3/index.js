@@ -11,7 +11,7 @@ const studentRoutes = require('./routes/studentRoutes');
 
 app.use(express.json());
 app.use('/', routes);
-app.use('/user', passport.authenticate('jwt', { session: false }), studentRoutes);
+app.use('/student', passport.authenticate('jwt', { session: false }), studentRoutes);
 
 mongoose.connect(
     'mongodb://localhost:27017/oblig3-users', {
