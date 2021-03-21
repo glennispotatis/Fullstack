@@ -36,7 +36,7 @@ const ExtractJWT = require('passport-jwt').ExtractJwt;
 passport.use(
     new JWTStrategy(
         {
-            secretOrKey: 'ostepop',
+            secretOrKey: process.env.KEY,
             jwtFromRequest: ExtractJWT.fromUrlQueryParameter('secret_token')
         },
         async (token, done) => {

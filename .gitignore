@@ -15777,3 +15777,16 @@ oblig3/testcode/node_modules/yallist/LICENSE
 oblig3/testcode/node_modules/yallist/package.json
 oblig3/testcode/node_modules/yallist/README.md
 oblig3/testcode/node_modules/yallist/yallist.js
+oblig3/node_modules/dotenv/CHANGELOG.md
+oblig3/node_modules/dotenv/config.js
+oblig3/node_modules/dotenv/LICENSE
+oblig3/node_modules/dotenv/package.json
+oblig3/node_modules/dotenv/README.md
+oblig3/node_modules/dotenv/lib/cli-options.js
+oblig3/node_modules/dotenv/lib/env-options.js
+oblig3/node_modules/dotenv/lib/main.js
+oblig3/node_modules/dotenv/types/index.d.ts
+oblig3/node_modules/dotenv/types/test.ts
+oblig3/node_modules/dotenv/types/tsconfig.json
+oblig3/node_modules/dotenv/types/tslint.json
+oblig3/.env

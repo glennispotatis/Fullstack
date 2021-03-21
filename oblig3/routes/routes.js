@@ -24,7 +24,7 @@ router.post(
                         async (error) => {
                             if (error) return next(error);
                             const body = { email: user.email, role: user.role };
-                            const token = jwt.sign({ user: body }, 'ostepop');
+                            const token = jwt.sign({ user: body }, process.env.KEY);
                             return res.json(token);
                         })
                 } catch (error) {
