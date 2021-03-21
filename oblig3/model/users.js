@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt');
 
+// This is a slightly modified version from the lecture 17th of March. It has been modified to 
+// meet the requirements given in the description. I didn't include an ID as mongoDB creates one.
+
 const UserSchema = new Schema({
     name: {type:String, required:true},
     surname: {type:String, required:true},

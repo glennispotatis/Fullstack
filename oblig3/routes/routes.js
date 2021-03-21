@@ -4,11 +4,17 @@ const jwt = require('jsonwebtoken');
 const controller = require('../controllers/controller');
 const router = express.Router();
 
+/* 
+Most of this code was taken from the lecture 17th of March. These are the public routes, and are
+available fro everyone.
+*/
+
 router.post(
     '/signup',
     controller.createUser
 );
 
+// Had errors when I tried to move the login functionality to the controller, decided to keep it here.
 router.post(
     '/login',
     async (req, res, next) => {

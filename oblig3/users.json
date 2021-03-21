@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "6057752b1f7449ba65ac4238"
+  },
+  "role": "teacher",
+  "place": "on-campus",
+  "status": "available",
+  "name": "teacher",
+  "surname": "test",
+  "email": "teacher@gmail.com",
+  "password": "$2b$10$JSh92/bA2.PnhH238.cLmuhRGDyQXvd6p8hf9IVB50CjyosL8yJlK",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "605775a61f7449ba65ac4239"
+  },
+  "role": "student",
+  "place": "on-campus",
+  "status": "available",
+  "name": "student",
+  "surname": "test",
+  "email": "student@gmail.com",
+  "password": "$2b$10$N14z0It9qWxpbedQ9oiv0.gWkwlOsBKFBpq7WObdV09RAfsIifhMO",
+  "__v": 0
+}]

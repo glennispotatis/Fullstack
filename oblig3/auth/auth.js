@@ -2,6 +2,9 @@ const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
 const UserModel = require('../model/users');
 
+/* 
+This code is a direct copy from the lecture 17th of March.
+*/
 
 passport.use(
     'login',

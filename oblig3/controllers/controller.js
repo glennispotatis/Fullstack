@@ -1,5 +1,7 @@
 const UserModel = require('../model/users');
+// This is the public controller, anyone have access to these operations
 
+// This is the create user function that anyone can access.
 const createUser = async (req, res) => {
     const {name, surname, email, role, password, place, status} = req.body;
 
@@ -24,6 +26,8 @@ const createUser = async (req, res) => {
         .catch((error) => res.status(500).send("Something went wrong.."));
 }
 
+// This function checks if the email entered by the user is infact in the DB before it sends the
+// status message.
 const forgotPass = async (req, res) => {
     const email = req.body.email;
 

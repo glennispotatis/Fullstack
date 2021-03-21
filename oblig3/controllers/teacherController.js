@@ -1,5 +1,7 @@
 const UserModel = require('../model/users');
+// These functions can only be accessed by Teachers.
 
+// A teacher should be able to delete a user.
 const deleteUser = async (req, res) => {
     const email = req.body.email;
 
@@ -12,11 +14,13 @@ const deleteUser = async (req, res) => {
     }
 }
 
+// A teacher should be able to update users information.
 const updateUser = async (req, res) => {
     const { newName, newSurname, newEmail, newRole, newPlace, newStatus } = req.body;
     const email = req.body.email;
     const exist = await UserModel.findOne({ email });
 
+    // These if sentences are my error handlers, they check if the inputs are valid and can be changed.
     if (!email) {
         return res.status(400).json({ error: "You must provide a user to update" });
     }
@@ -26,6 +30,7 @@ const updateUser = async (req, res) => {
     if (!newName && !newSurname && !newEmail && !newRole && !newPlace && !newStatus) {
         return res.status(400).json({ error: "You must specify what to update" });
     }
+    // Explanation for this setup can be found in readme.md>* Update userfields in DB
     if (newRole) {
         if (newRole === 'teacher' || newRole === 'student') { }
         else {
@@ -45,6 +50,9 @@ const updateUser = async (req, res) => {
         }
     }
 
+    // If the validation above is passed, the function will update the users information.
+    // The key that it searches for is the email, since it is unique, and therefore, as stated in
+    // readme.md, email has to be updated last, both here and in the body.
     if (newName) {
         await UserModel.findOneAndUpdate({ email }, { $set: { name: newName } });
     }

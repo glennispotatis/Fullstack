@@ -1,3 +1,6 @@
+/* 
+Most of this code was taken from the lecture 17th of March.
+*/
 require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose');
@@ -14,6 +17,8 @@ app.use(express.json());
 app.use('/', routes);
 app.use('/student', passport.authenticate('jwt', { session: false }), studentRoutes);
 
+// This code was taken from stackoverflow, it ensures that the user trying to enter
+// the site, is infact authenticated as a teacher.
 const teacherGuard = (req, res, next) => {
     if (req.user && req.user.role === 'teacher') {
         next();
