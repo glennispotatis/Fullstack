@@ -1,4 +1,4 @@
-### IDG2100 - Full-stack web development - Assignment 3 ###
+# IDG2100 - Full-stack web development - Assignment 3 #
 - 'node index' to run the application -
 
 Most of the code in this submission has been taken from the second to last back-end lecture(17-mar-21).
