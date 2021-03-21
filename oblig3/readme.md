@@ -1,4 +1,4 @@
-## IDG2100 - Full-stack web development - Assignment 3 ##
+### IDG2100 - Full-stack web development - Assignment 3 ###
 - 'node index' to run the application -
 
 Most of the code in this submission has been taken from the second to last back-end lecture(17-mar-21).
@@ -9,11 +9,11 @@ copy eachother. So you might find some similarities between our code.
 
 I decided to use a .env file to keep the secret token more secure.
 
-* Role authentication
+## Role authentication
 https://stackoverflow.com/questions/53364187/how-to-implement-role-based-authorization-in-node-js-using-token-based-authentic
 The code for filtering the students from teachers were taken from the link above.
 
-* Update userfields in DB
+## Update userfields in DB
 https://dev.to/rubiin/mongoose-dynamic-update-hack-21ad
 I tried using the code from the link above, instead of writing if sentences for each input field.
 Unfortunately, using the code from the link above did not work. That's why I wrote if sentences 
@@ -25,7 +25,7 @@ otherwise the fields beneath will not be updated!
 Apparently doing !== for role, place and status does not work.
 That's why the if sentences have empty bodies, but it works sooo... ;)
 
-* TESTING
+## TESTING
 Different users { TESTING PURPOSES ONLY } can be found in './users.json'.
 Teacher: email = teacher@gmail.com, password: teacher
 Student: email = student@gmail.com, password: student
