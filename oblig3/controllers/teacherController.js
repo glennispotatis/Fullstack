@@ -27,7 +27,7 @@ const updateUser = async (req, res) => {
         return res.status(400).json({ error: "You must specify what to update" });
     }
     if (newRole) {
-        if (newRole === 'Teacher' || newRole === 'Student') { }
+        if (newRole === 'teacher' || newRole === 'student') { }
         else {
             return res.status(400).json({ error: "Invalid role" });
         }

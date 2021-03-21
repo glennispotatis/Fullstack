@@ -11,11 +11,11 @@ const createUser = async (req, res) => {
     const newUser = new UserModel({
         name: name,
         surname: surname,
-        email: email,
-        role: role,
+        email: email.toLowerCase(),
+        role: role.toLowerCase(),
         password: password,
-        place: place,
-        status: status
+        place: place.toLowerCase(),
+        status: status.toLowerCase()
     });
 
     await newUser

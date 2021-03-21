@@ -15,7 +15,7 @@ app.use('/', routes);
 app.use('/student', passport.authenticate('jwt', { session: false }), studentRoutes);
 
 const teacherGuard = (req, res, next) => {
-    if (req.user && req.user.role === 'Teacher') {
+    if (req.user && req.user.role === 'teacher') {
         next();
     } else {
         res.status(403).json({Error: "You are not authorized!"});

@@ -10,3 +10,7 @@ It is important to have the "newEmail" last in the query,
 otherwise the fields beneath will not be updated!
 
 Apparently doing !== for role, place and status does not work.
+
+Different users { TESTING PURPOSES ONLY }
+Teacher: email = teacher@gmail.com password: teacher
+Student: email = student@gmail.com password: student
