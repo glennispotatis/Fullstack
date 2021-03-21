@@ -27,7 +27,8 @@ mongoose.connect(
     'mongodb://localhost:27017/oblig3-users', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true
+    useCreateIndex: true,
+    useFindAndModify: false
 });
 
 const db = mongoose.connection;
