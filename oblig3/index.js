@@ -15,7 +15,7 @@ const teacherRoutes = require('./routes/teacherRoutes');
 
 app.use(express.json());
 app.use('/', routes);
-app.use('/student', passport.authenticate('jwt', { session: false }), studentRoutes);
+app.use('/dashboard', passport.authenticate('jwt', { session: false }), studentRoutes);
 
 // This code was taken from stackoverflow, it ensures that the user trying to enter
 // the site, is infact authenticated as a teacher.
@@ -26,7 +26,7 @@ const teacherGuard = (req, res, next) => {
         res.status(403).json({Error: "You are not authorized!"});
     }
 }
-app.use('/teacher', passport.authenticate('jwt', { session: false }), teacherGuard, teacherRoutes);
+app.use('/user', passport.authenticate('jwt', { session: false }), teacherGuard, teacherRoutes);
 
 mongoose.connect(
     'mongodb://localhost:27017/oblig3-users', {

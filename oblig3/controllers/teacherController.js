@@ -34,19 +34,19 @@ const updateUser = async (req, res) => {
     if (newRole) {
         if (newRole === 'teacher' || newRole === 'student') { }
         else {
-            return res.status(400).json({ error: "Invalid role" });
+            return res.status(400).json({ error: "Invalid role, remember only lowercase letters ;)" });
         }
     }
     if (newPlace) {
         if (newPlace === 'on-campus' || newPlace === 'home-office') { }
         else {
-            return res.status(400).json({ error: "Invalid place" });
+            return res.status(400).json({ error: "Invalid place, remember lowercase letters ;)" });
         }
     }
     if (newStatus) {
         if (newStatus === 'busy' || newStatus === 'available') { }
         else {
-            return res.status(400).json({ error: "Invalid status" });
+            return res.status(400).json({ error: "Invalid status, remember only lowercase letters ;)" });
         }
     }
 

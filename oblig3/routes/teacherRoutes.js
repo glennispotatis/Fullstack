@@ -7,19 +7,19 @@ const controller  =require('../controllers/teacherController');
 // Teacher should be able to create new users, so I imported the 'createUser' from signup method
 // to use it here as well.
 router.post(
-    '/add',
+    '/',
     unAController.createUser
 );
 
 // This is the update functionality that teachers have
 router.patch(
-    '/update',
+    '/',
     controller.updateUser
 );
 
 // This is the delete functionality that teachers have.
 router.delete(
-    '/delete',
+    '/',
     controller.deleteUser
 );
 

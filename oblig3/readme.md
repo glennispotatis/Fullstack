@@ -30,9 +30,11 @@ Different users { TESTING PURPOSES ONLY } can be found in './users.json'.
 Teacher: email = teacher@gmail.com, password: teacher
 Student: email = student@gmail.com, password: student
 
+## Compass
 The 'users.json' file was exported directly from Compass and could therefore be directly imported to
 compass for testing.
 
+## Postman
 The 'postman_collection.json' file was exported directly from Postman and therefore you should be 
 able to import it to your Postman directly.
 
@@ -42,3 +44,6 @@ the token in the header.
 
 I decided to use 'fromAuthHeaderAsBearerToken()' instead of the 'fromUrlQueryParameter()' because
 I didn't want to have the token visible in the URL.
+
+## Last minute changes
+I realised I had the wrong routes as per the assignment description. Changed these to /dashboard where students can see all users, and /user where teachers can update, create and delete users.
