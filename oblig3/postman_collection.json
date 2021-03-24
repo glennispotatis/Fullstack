@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "6422051b-3177-4147-8b3a-ee6710fba2d2",
+		"name": "Oblig3 fullstack",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"teacher@gmail.com\",\n    \"password\": \"teacher\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"test\",\n    \"surname\": \"testesen\",\n    \"email\": \"test@gmail.com\",\n    \"role\": \"Student\",\n    \"password\": \"test\",\n    \"place\": \"on-campus\",\n    \"status\": \"available\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forgot Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"student@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/forgot",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"forgot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Student list all users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoidGVhY2hlckBnbWFpbC5jb20iLCJyb2xlIjoidGVhY2hlciJ9LCJpYXQiOjE2MTY1ODA1Mjl9.O-VrcA0fjM_h9cYT5DqkZqR7OJ2ou2sBkzRHmZVoy54",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/dashboard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Teacher create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoidGVhY2hlckBnbWFpbC5jb20iLCJyb2xlIjoidGVhY2hlciJ9LCJpYXQiOjE2MTY1ODA1Mjl9.O-VrcA0fjM_h9cYT5DqkZqR7OJ2ou2sBkzRHmZVoy54",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"test\",\n    \"surname\": \"testesen\",\n    \"email\": \"test@gmail.com\",\n    \"role\": \"Student\",\n    \"password\": \"test\",\n    \"place\": \"on-campus\",\n    \"status\": \"busy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Teacher update",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoidGVhY2hlckBnbWFpbC5jb20iLCJyb2xlIjoidGVhY2hlciJ9LCJpYXQiOjE2MTY1ODA1Mjl9.O-VrcA0fjM_h9cYT5DqkZqR7OJ2ou2sBkzRHmZVoy54",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test@gmail.com\",\n    \"newName\": \"tast\",\n    \"newSurname\": \"tastesen\",\n    \"newRole\": \"teacher\",\n    \"newPlace\": \"on-campus\",\n    \"newStatus\": \"available\",\n    \"newEmail\": \"tast@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Teacher delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoidGVhY2hlckBnbWFpbC5jb20iLCJyb2xlIjoidGVhY2hlciJ9LCJpYXQiOjE2MTY1ODA1Mjl9.O-VrcA0fjM_h9cYT5DqkZqR7OJ2ou2sBkzRHmZVoy54",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
