@@ -14,7 +14,7 @@ app.use('/', routes);
 app.use('/user', passport.authenticate('jwt', { session: false }), secureRoute);
 
 mongoose.connect(
-    'mongodb+srv://Glennis:Glennis123@cluster0.x2hzy.mongodb.net/user-db', {
+    'mongoDB-URI', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
